@@ -19,8 +19,8 @@ search_scopus <- function(api_key, string, retMax){
   
   result <- df %>%
     mutate(database = "scopus") %>%
-    rename(uid = scopusID, 
-           title = articletitle)
+    dplyr::rename(uid = scopusID) %>%
+    dplyr::rename(title = articletitle)
 
   return(result)
   
