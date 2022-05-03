@@ -18,7 +18,9 @@ search_scopus <- function(api_key, string, retMax){
      df <-  extractXML(theData) ## return the final data as a df
   
   result <- df %>%
-    mutate(database = "scopus") 
+    mutate(database = "scopus") %>%
+    rename(uid = scopusID, 
+           title = articletitle)
 
   return(result)
   
