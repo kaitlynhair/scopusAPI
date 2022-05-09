@@ -23,6 +23,9 @@ search_scopus <- function(api_key, string, retMax){
     mutate(uid = paste0(database, "-", scopusID)) %>%
     dplyr::rename(title = articletitle)
 
+  # correct author formatting 
+  result$author <- gsub('|', ';', result$author)
+  
   return(result)
   
     }
