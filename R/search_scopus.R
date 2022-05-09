@@ -24,7 +24,7 @@ search_scopus <- function(api_key, string, retMax){
     dplyr::rename(title = articletitle)
 
   # correct author formatting 
-  result$author <- gsub('|', ';', result$author)
+  result$author <- gsub('\\|', '; ', result$author)
   
   return(result)
   
