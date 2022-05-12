@@ -18,7 +18,7 @@ search_scopus <- function(api_key, string, retMax){
      df <-  extractXML(theData) ## return the final data as a df
   
   result <- df %>%
-    mutate(database = "scopus") %>%
+    mutate(source = "scopus") %>%
     rename(author = authors) %>%
     rename(author_affiliation = affiliations) %>%
     rename(author_country = countries) %>%
