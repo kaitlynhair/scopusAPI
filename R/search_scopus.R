@@ -22,7 +22,7 @@ search_scopus <- function(api_key, string, retMax){
     rename(author = authors) %>%
     rename(author_affiliation = affiliations) %>%
     rename(author_country = countries) %>%
-    mutate(uid = paste0(database, "-", scopusID)) %>%
+    mutate(uid = paste0(source, "-", scopusID)) %>%
     dplyr::rename(title = articletitle)
 
   # correct author formatting 
