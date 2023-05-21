@@ -18,11 +18,11 @@ search_scopus <- function(api_key, string, retMax){
      df <-  extractXML(theData) ## return the final data as a df
   
   result <- df %>%
-    mutate(source = "scopus") %>%
-    rename(author = authors) %>%
-    rename(author_affiliation = affiliations) %>%
-    rename(author_country = countries) %>%
-    mutate(uid = paste0(source, "-", scopusID)) %>%
+    dplyr::mutate(source = "scopus") %>%
+    dplyr::rename(author = authors) %>%
+    dplyr::rename(author_affiliation = affiliations) %>%
+    dplyr::rename(author_country = countries) %>%
+    dplyr::mutate(uid = paste0(source, "-", scopusID)) %>%
     dplyr::rename(title = articletitle)
 
   # correct author formatting 
